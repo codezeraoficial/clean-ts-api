@@ -31,10 +31,9 @@ export class SignUpController implements IController {
         email,
         password
       })
-
       return ok(account)
     } catch (error) {
-      return serverError()
+      return serverError(error)
     }
   }
 }
