@@ -52,5 +52,8 @@
     "mongodb": "^3.6.2",
     "npm-check": "^5.9.2",
     "validator": "^13.1.17"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }
