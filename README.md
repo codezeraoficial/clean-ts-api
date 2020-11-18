@@ -1,6 +1,6 @@
 
 <h1 align="center">
-    <img alt="NodeJs" title="#NodeJs" src="https://miro.medium.com/max/900/1*EaB5rd8ml5HL1KXFWkNeiA.png" width="250px" />
+    <img alt="NodeJs" title="#NodeJs" src="https://miro.medium.com/max/900/1*EaB5rd8ml5HL1KXFWkNeiA.png" width="450px" />
 </h1>
 
 <h4 align="center"> 
@@ -35,7 +35,7 @@ This application aims to provide and register research data on the Information T
 data loading and flexibility in access.
 
 <h1 align="center">
-    <img alt="Example" title="Example" src="https://www.infoq.com/i18n/software-architecture-trends-2019/styles/illustration.svg" width="600px" />
+    <img alt="Example" title="Example" src="https://www.infoq.com/i18n/software-architecture-trends-2019/styles/illustration.svg" width="250px" />
 </h1>
 
 
