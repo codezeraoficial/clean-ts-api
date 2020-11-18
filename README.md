@@ -1,6 +1,6 @@
 
 <h1 align="center">
-    <img alt="NodeJs" title="#NodeJs" src="https://www.infoq.com/i18n/software-architecture-trends-2019/styles/illustration.svg" width="250px" />
+    <img alt="NodeJs" title="#NodeJs" src="https://miro.medium.com/max/900/1*EaB5rd8ml5HL1KXFWkNeiA.png" width="250px" />
 </h1>
 
 <h4 align="center"> 
@@ -29,13 +29,13 @@
 
 
 
-## :gear: APIREST
+## :man_technologist: NodeJs, Typescript, TDD, Clean Architecture e SOLID :construction_worker_man:
 
-This application aims to provide data from a car rental service. Using the stack node as APIREST providing performance
+This application aims to provide and register research data on the Information Technology market. Using the stack node as APIREST providing performance
 data loading and flexibility in access.
 
 <h1 align="center">
-    <img alt="Example" title="Example" src="https://peerbits-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/rest-api-code-main.png" width="600px" />
+    <img alt="Example" title="Example" src="https://www.infoq.com/i18n/software-architecture-trends-2019/styles/illustration.svg" width="600px" />
 </h1>
 
 
