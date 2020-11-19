@@ -1,9 +1,9 @@
-import { EmailValidation, RequiredFieldValidation, ValidationComposite, CompareFieldsValidation } from '../../../presentations/helpers/validators'
-import { Validation } from '../../../presentations/protocols/validation'
-import { IEmailValidator } from '../../../presentations/protocols/email-validator'
-import { makeSigUpValidation } from './signup-validation-factory'
+import { EmailValidation, RequiredFieldValidation, ValidationComposite, CompareFieldsValidation } from '../../../../presentations/helpers/validators'
+import { Validation } from '../../../../presentations/protocols/validation'
+import { IEmailValidator } from '../../../../presentations/protocols/email-validator'
+import { makeSignUpValidation } from '../signup/signup-validation-factory'
 
-jest.mock('../../../presentations/helpers/validators/validation-composite')
+jest.mock('../../../../presentations/helpers/validators/validation-composite')
 const makeEmailValidator = (): IEmailValidator => {
   class EmailValidatorStub implements IEmailValidator {
     isValid (email: string): boolean {
@@ -14,7 +14,7 @@ const makeEmailValidator = (): IEmailValidator => {
 }
 describe('SigUpValiadtionFactory', () => {
   test('Should call validation composie with all validations', () => {
-    makeSigUpValidation()
+    makeSignUpValidation()
     const validations: Validation[] = []
     for (const field of ['name', 'email', 'password', 'passwordConfirmation']) {
       validations.push(new RequiredFieldValidation(field))
