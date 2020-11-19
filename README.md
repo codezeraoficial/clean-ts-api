@@ -9,19 +9,19 @@
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/codezeraoficial/GoRentServer?color=%2304D361">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/codezeraoficial/clean-ts-api">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/codezeraoficial/survey-api">
 	
   <a href="https://www.linkedin.com/in/leonardo-rviana/">
     <img alt="Made by LeonardoViana" src="https://img.shields.io/badge/made%20by-LeonardoViana-%2304D361">
   </a>
 
-  <a href="https://github.com/codezeraoficial/clean-ts-api/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/codezeraoficial/clean-ts-api">
+  <a href="https://github.com/codezeraoficial/survey-api/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/codezeraoficial/survey-api">
   </a>
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
-   <a href="https://github.com/codezeraoficial/clean-ts-api/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/codezeraoficial/clean-ts-api?style=social">
+   <a href="https://github.com/codezeraoficial/survey-api/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/codezeraoficial/survey-api?style=social">
   </a>
 </p>
 
@@ -63,7 +63,7 @@ From your command line:
 $ cd clean-node-api
 
 # Clone this repository
-$ https://github.com/codezeraoficial/clean-ts-api
+$ https://github.com/codezeraoficial/survey-api
 
 # Go into the repository
 $ cd clean-node-api
