@@ -1,4 +1,3 @@
-import { AccountModel } from '../../../domain/models/account'
 import { DbAddSurvey } from './db-add-survey'
 import { AddSurveyModel, AddSurveyRepository } from './db-add-survey-protocols'
 
@@ -12,7 +11,7 @@ const makeFakeSurveyData = (): AddSurveyModel => ({
 
 const makeAddSurveyRepository = (): AddSurveyRepository => {
   class AddSurveyRepositoryStub implements AddSurveyRepository {
-    async add (account: AddSurveyModel): Promise<AccountModel> {
+    async add (account: AddSurveyModel): Promise<void> {
       return await new Promise(resolve => resolve())
     }
   }
