@@ -12,8 +12,8 @@ const makeEmailValidator = (): IEmailValidator => {
   }
   return new EmailValidatorStub()
 }
-describe('SigUpValiadtionFactory', () => {
-  test('Should call validation composie with all validations', () => {
+describe('SigUpValidation Factory', () => {
+  test('Should call ValidationComposite with all validations', () => {
     makeSignUpValidation()
     const validations: Validation[] = []
     for (const field of ['name', 'email', 'password', 'passwordConfirmation']) {
