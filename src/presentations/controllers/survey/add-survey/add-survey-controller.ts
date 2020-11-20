@@ -1,5 +1,5 @@
 import { AddSurvey } from '../../../../domain/usecases/add-survey'
-import { badRequest, serverError } from '../../../helpers/http/http-helper'
+import { badRequest, noContent, serverError } from '../../../helpers/http/http-helper'
 import { Validation } from '../../../protocols'
 import { HttpRequest, HttpResponse, IController } from './add-survey-controller-protocols'
 
@@ -20,7 +20,7 @@ export class AddSurveyController implements IController {
         question,
         answers
       })
-      return null
+      return noContent()
     } catch (error) {
       return serverError(error)
     }
