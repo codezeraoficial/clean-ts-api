@@ -23,6 +23,11 @@
     <img alt="Build" src="https://travis-ci.com/codezeraoficial/survey-api.svg?branch=master">
   </a>
 
+  <a href='https://coveralls.io/github/codezeraoficial/survey-api'>
+    <img src='https://coveralls.io/repos/github/codezeraoficial/survey-api/badge.svg' alt='Coverage Status' />
+  </a>
+
+
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
    <a href="https://github.com/codezeraoficial/survey-api/stargazers">
     <img alt="Stargazers" src="https://img.shields.io/github/stars/codezeraoficial/survey-api?style=social">
