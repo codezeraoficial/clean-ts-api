@@ -18,6 +18,10 @@
   <a href="https://github.com/codezeraoficial/survey-api/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/codezeraoficial/survey-api">
   </a>
+  
+  <a href="https://github.com/codezeraoficial/survey-api/commits/master">
+    <img alt="Build" src="https://travis-ci.com/codezeraoficial/survey-api.svg?branch=master">
+  </a>
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
    <a href="https://github.com/codezeraoficial/survey-api/stargazers">
