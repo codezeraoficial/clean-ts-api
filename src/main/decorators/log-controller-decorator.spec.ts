@@ -25,7 +25,7 @@ const makeFakeRequest = (): HttpRequest => ({
     passwordConfirmation: 'any_password'
   }
 })
-interface SutTypes{
+type SutTypes = {
   sut: LogControllerDecorator
   controllerStub: IController
   logErrorRepositoryStub: LogErrorRepository
