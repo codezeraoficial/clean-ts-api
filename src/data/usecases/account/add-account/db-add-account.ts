@@ -1,9 +1,9 @@
-import { IAddAccount, Hasher, AccountModel, AddAccountModel, IAddAccountRepository, LoadAccountByEmailRepository } from './db-add-account-protocols'
+import { IAddAccount, Hasher, AccountModel, AddAccountModel, AddAccountRepository, LoadAccountByEmailRepository } from './db-add-account-protocols'
 
 export class DbAddAccount implements IAddAccount {
   constructor (
     private readonly hasher: Hasher,
-    private readonly addAccountRepository: IAddAccountRepository,
+    private readonly addAccountRepository: AddAccountRepository,
     private readonly loadAccountByEmailRepository: LoadAccountByEmailRepository
 
   ) {}
