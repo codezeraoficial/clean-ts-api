@@ -1,4 +1,4 @@
-import { HttpRequest, HttpResponse, IController } from '@/presentation/protocols'
+import { HttpRequest, HttpResponse, Controller } from '@/presentation/protocols'
 import { serverError, ok } from '@/presentation/helpers/http/http-helper'
 import { LogControllerDecorator } from './log-controller-decorator'
 import { LogErrorRepository } from '@/data/protocols/db/log/log-error-repository'
@@ -27,7 +27,7 @@ const makeFakeRequest = (): HttpRequest => ({
 })
 type SutTypes = {
   sut: LogControllerDecorator
-  controllerStub: IController
+  controllerStub: Controller
   logErrorRepositoryStub: LogErrorRepository
 }
 const makeSut = (): SutTypes => {
@@ -41,8 +41,8 @@ const makeSut = (): SutTypes => {
   }
 }
 
-const makeController = (): IController => {
-  class ControllerStub implements IController {
+const makeController = (): Controller => {
+  class ControllerStub implements Controller {
     async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
       return await new Promise(resolve => resolve(ok(makeFakeAccount())))
     }

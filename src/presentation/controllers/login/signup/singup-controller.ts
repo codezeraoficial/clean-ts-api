@@ -1,8 +1,8 @@
-import { HttpRequest, HttpResponse, IController, IAddAccount, Validation, Authentication } from './signup-controller-protocols'
+import { HttpRequest, HttpResponse, Controller, IAddAccount, Validation, Authentication } from './signup-controller-protocols'
 import { badRequest, serverError, ok, forbidden } from '../../../helpers/http/http-helper'
 import { EmailInUseError } from '../../../errors'
 
-export class SignUpController implements IController {
+export class SignUpController implements Controller {
   constructor (
     private readonly addAccount: IAddAccount,
     private readonly validation: Validation,

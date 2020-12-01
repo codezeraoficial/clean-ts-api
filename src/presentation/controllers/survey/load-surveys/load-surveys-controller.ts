@@ -1,8 +1,8 @@
 import { LoadSurveys } from '@/domain/usecases/survey/load-surveys'
 import { noContent, ok, serverError } from '@/presentation/helpers/http/http-helper'
-import { HttpRequest, HttpResponse, IController } from './load-surveys-controller-protocols'
+import { HttpRequest, HttpResponse, Controller } from './load-surveys-controller-protocols'
 
-export class LoadSurveysController implements IController {
+export class LoadSurveysController implements Controller {
   constructor (private readonly loadSurveys: LoadSurveys) {}
   async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
