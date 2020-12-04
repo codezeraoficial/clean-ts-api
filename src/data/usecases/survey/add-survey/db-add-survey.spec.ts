@@ -1,31 +1,15 @@
 import Mockdate from 'mockdate'
 import { DbAddSurvey } from './db-add-survey'
-import { AddSurveyParams, AddSurveyRepository } from './db-add-survey-protocols'
-import { throwError } from '@/domain/test'
+import { AddSurveyRepository } from './db-add-survey-protocols'
+import { mockFakeSurveyParams, throwError } from '@/domain/test'
+import { mockAddSurveyRepository } from '@/data/test'
 
-const makeFakeSurveyData = (): AddSurveyParams => ({
-  question: 'any_question',
-  answers: [{
-    image: 'any_image',
-    answer: 'any_answer'
-  }],
-  date: new Date()
-})
-
-const makeAddSurveyRepository = (): AddSurveyRepository => {
-  class AddSurveyRepositoryStub implements AddSurveyRepository {
-    async add (account: AddSurveyParams): Promise<void> {
-      return await new Promise(resolve => resolve())
-    }
-  }
-  return new AddSurveyRepositoryStub()
-}
 type SutTypes = {
   sut: DbAddSurvey
   addSurveyRepositoryStub: AddSurveyRepository
 }
 const makeSut = (): SutTypes => {
-  const addSurveyRepositoryStub = makeAddSurveyRepository()
+  const addSurveyRepositoryStub = mockAddSurveyRepository()
   const sut = new DbAddSurvey(addSurveyRepositoryStub)
   return {
     sut,
@@ -45,7 +29,7 @@ describe('DbAddSurvey Usecase', () => {
   test('Should call AddSurveyRepository with corect values', async () => {
     const { addSurveyRepositoryStub, sut } = makeSut()
     const addSpy = jest.spyOn(addSurveyRepositoryStub, 'add')
-    const surveyData = makeFakeSurveyData()
+    const surveyData = mockFakeSurveyParams()
     await sut.add(surveyData)
     expect(addSpy).toHaveBeenCalledWith(surveyData)
   })
@@ -53,7 +37,7 @@ describe('DbAddSurvey Usecase', () => {
   test('Should throw if AddSurveyRepository throws', async () => {
     const { addSurveyRepositoryStub, sut } = makeSut()
     jest.spyOn(addSurveyRepositoryStub, 'add').mockImplementationOnce(throwError)
-    const promise = sut.add(makeFakeSurveyData())
+    const promise = sut.add(mockFakeSurveyParams())
     await expect(promise).rejects.toThrow()
   })
 })
