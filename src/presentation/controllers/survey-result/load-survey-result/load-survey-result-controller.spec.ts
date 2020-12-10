@@ -5,7 +5,7 @@ import { InvalidParamError } from '@/presentation/errors'
 import { forbidden, ok, serverError } from '@/presentation/helpers/http/http-helper'
 import { mockFakeSurveyResult, throwError } from '@/domain/test'
 
-const makeFakeRequest = (): HttpRequest => ({
+const mockRequest = (): HttpRequest => ({
   params: {
     surveyId: 'any_id'
   }
@@ -30,41 +30,41 @@ describe('LoadSurveyResult Controller', () => {
   test('Should call LoadSurveyById with correct values', async () => {
     const { loadSurveyByIdStub, sut } = makeSut()
     const loadByIdSpy = jest.spyOn(loadSurveyByIdStub, 'loadById')
-    await sut.handle(makeFakeRequest())
+    await sut.handle(mockRequest())
     expect(loadByIdSpy).toHaveBeenCalledWith('any_id')
   })
 
   test('Should return 403 if LoadSurveyById returns null', async () => {
     const { loadSurveyByIdStub, sut } = makeSut()
     jest.spyOn(loadSurveyByIdStub, 'loadById').mockReturnValueOnce(Promise.resolve(null))
-    const HttpResponse = await sut.handle(makeFakeRequest())
+    const HttpResponse = await sut.handle(mockRequest())
     expect(HttpResponse).toEqual(forbidden(new InvalidParamError('surveyId')))
   })
 
   test('Should return 500 if LoadSurveyById throws', async () => {
     const { sut, loadSurveyByIdStub } = makeSut()
     jest.spyOn(loadSurveyByIdStub, 'loadById').mockImplementationOnce(throwError)
-    const httpResponse = await sut.handle(makeFakeRequest())
+    const httpResponse = await sut.handle(mockRequest())
     expect(httpResponse).toEqual(serverError(new Error()))
   })
 
   test('Should call LoadSurveyResult with correct values', async () => {
     const { loadSurveyResultStub, sut } = makeSut()
     const loadSpy = jest.spyOn(loadSurveyResultStub, 'load')
-    await sut.handle(makeFakeRequest())
+    await sut.handle(mockRequest())
     expect(loadSpy).toHaveBeenCalledWith('any_id')
   })
 
   test('Should return 500 if LoadSurveyResult throws', async () => {
     const { sut, loadSurveyResultStub } = makeSut()
     jest.spyOn(loadSurveyResultStub, 'load').mockImplementationOnce(throwError)
-    const httpResponse = await sut.handle(makeFakeRequest())
+    const httpResponse = await sut.handle(mockRequest())
     expect(httpResponse).toEqual(serverError(new Error()))
   })
 
   test('Should return 200 on success', async () => {
     const { sut } = makeSut()
-    const httpResponse = await sut.handle(makeFakeRequest())
+    const httpResponse = await sut.handle(mockRequest())
     expect(httpResponse).toEqual(ok(mockFakeSurveyResult()))
   })
 })
